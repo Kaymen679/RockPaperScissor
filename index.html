@@ -1,132 +1,25 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="style.css">
 <title>
     Rock Paper Scissor Game Testing
 </title>
-<select name="Scissors" id="selector">
-    <option value="">  Pick Your Weapon  </option>
-    <option value="Rock">Rock</option>
-    <option value="Paper">Paper</option>
-    <option value="Scissors">Scissors</option>
-</select>
-<button id="play">Play!</button>
-<p id="hScore">Human: </p>
-<p id="cScore">Comp: </p>
-<script>
 
-    function computerPlayer() {
-        let x = (Math.random() * 100);
+<body id="container">
+    <div id="margin">Rock Paper Scissors</div>
+    <div id="winLog">Choose Your Weapon!</div>
+    <div id="scoreContainer">
+        <h3 id="pScore">0</h3>
+        <h3 id="cScore">0</h3>
+    </div>
 
-        switch (true) {
-            case x < 33:
-                return "Rock";
-                break;
-            case x < 66:
-                return "Paper";
-                break;
-            case x < 100:
-                return "Scissors";
-                break;
-        }
-    }
-
-    const input = document.getElementById("selector");
-    const button = document.getElementById("play");
-    
-    button.onclick = function() {
-        let playerInput = input.value;
-        let computer = computerPlayer();
-
-        if (playerInput === '') {
-            alert("You need to pick one!");
-            return;
-        } else {
-            if (computer === "Rock") {
-                if (playerInput === "Rock") {
-                    tie(computer, playerInput);
-                } else if (playerInput === "Paper") {
-                    playerWin(playerInput, computer);
-                } else if (playerInput === "Scissors") {
-                    compWin(computer, playerInput);
-                } else {
-                    alert("Something went horribly wrong!");
-                }
-            }
-            if (computer === "Paper") {
-                if (playerInput === "Paper") {
-                    tie(computer, playerInput);
-                } else if (playerInput === "Scissors") {
-                    playerWin(playerInput, computer);
-                } else if (playerInput === "Rock") {
-                    compWin(computer, playerInput);
-                } else {
-                    alert("Something went horribly wrong!");
-                }
-            }
-            if (computer === "Scissors") {
-                if (playerInput === "Scissors") {
-                    tie(computer, playerInput);
-                } else if (playerInput === "Rock") {
-                    playerWin(playerInput, computer);
-                } else if (playerInput === "Paper") {
-                    compWin(computer, playerInput);
-                } else {
-                    alert("Something went horribly wrong!");
-                }
-            }
-        }
-
-    }
-
-    function tie(x, y) {
-        alert(`It's a tie! ${x} ties with ${y}!`);
-    } 
-    function compWin(x, y) {
-        alert(`You lose! ${x} beats ${y}!`);
-        game(0);
-    }
-    function playerWin(x, y) {
-        alert(`You win! ${x} beats ${y}!`);
-        game(1);
-    }
-
-    const hScore = document.getElementById("hScore");
-    const cScore = document.getElementById("cScore");
-    let scoreHuman = 0;
-    let scoreComputer = 0;
-
-    function resetScore() {
-        scoreHuman = 0;
-        scoreComputer = 0;
-        cScore.textContent = "Comp: 0";
-        hScore.textContent = "Human: 0";
-    }
-
-    function winner() {
-            if(scoreHuman === 5) {
-            alert("Human Wins!");
-            scoreHuman = 0;
-            scoreComputer = 0;
-            resetScore();
-        }
-
-        if(scoreComputer === 5) {
-            alert("Computer Wins!")
-            scoreComputer = 0;
-            scoreHuman = 0;
-            resetScore();
-        }
-    }
-
-    function game(value) {
-        if(value === 0) {
-            scoreComputer++;
-            cScore.textContent = `Comp: ${scoreComputer}`;
-        } else {
-            scoreHuman++;
-            hScore.textContent = `Human: ${scoreHuman}`;
-        }
-        winner();
-    }
+    <div id="buttons">
+        <button data-key="" id="rock">Rock</button>
+        <button data-key="" id="paper">Paper</button>
+        <button data-key="" id="scissors">Scissors</button>
+    </div>
+    <div id="foot">
+    </div>
+</body>
 
 
-</script>
+<script src="script.js"></script>
