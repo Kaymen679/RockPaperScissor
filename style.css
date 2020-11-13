@@ -1,0 +1,92 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+:root {
+    --colorBoxBackground: rgba(27, 39, 73, 0.466);
+    --colorBorder: rgba(27, 73, 116, 0.5);
+}
+
+body::before {
+    background-image: linear-gradient(45deg,
+    rgba(138, 189, 236, 0.87),
+    rgba(63, 122, 139, 0.911)),
+    url(https://secure.i.telegraph.co.uk/multimedia/archive/03015/RockPaperScissors_3015010b.jpg);
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    content: '';
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+body {
+    font-family: Raleway, 'arial';
+    color: rgb(199, 199, 199);
+    font-size: 2rem;
+    align-content: center;
+    margin: 0, auto;
+    text-align: center;
+}
+#margin {
+    padding: 7%;
+}
+#winLog {
+    margin: 30px auto;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    background-color: var(--colorBoxBackground);
+    border: solid;
+    border-radius: 5px;
+    width: 50%;
+    border-color: rgba(27, 73, 116, 0.5);
+    font-style: italic;
+}
+#scoreContainer {
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    background-color: var(--colorBoxBackground);
+    border: solid var(--colorBorder);
+    border-radius: 5px;
+}
+h3 {
+    padding: 10px 20px 10px 20px;
+    align-content: center;
+    margin: 20px auto;
+    border-radius: 8px;
+    border: solid var(--colorBorder);
+}
+#buttons {
+    margin: 0 auto;
+    width: 50%;
+}
+button {
+    background-color: var(--colorBoxBackground);
+    width: 30%;
+    padding: .1rem 0 .1rem 0;
+    font-size: 1.5rem;
+    border: solid var(--colorBorder);
+    box-shadow: none;
+    transition: all .1s ease;
+    color: white;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+
+}
+.click {
+    transform: scale(.9);
+}
+button:focus, input:focus {
+    outline: none;
+}
+#foot {
+    width: 100%;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    margin: 20px auto;
+}
